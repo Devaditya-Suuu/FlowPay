@@ -214,7 +214,7 @@ function App() {
             Sign In
           </a>
           <a className="btn btn-nav" href="#cta">
-            Join Early Access
+            Get Early Access Now
           </a>
         </div>
       </nav>
@@ -227,19 +227,20 @@ function App() {
                 <span className="badge-dot" aria-hidden="true" />
                 Built for Indian MVP Builders
               </div>
-              <h1 className="hero-title">Stop fighting payment gateways. Start shipping.</h1>
+              <h1 className="hero-title">Start accepting payments in minutes — without KYC delays.</h1>
               <p className="hero-subtitle">
                 Accept payments instantly. No upfront KYC. Clean APIs. Smart routing.
                 The developer-first software platform designed for Indian indie hackers and founders.
               </p>
               <div className="hero-actions">
                 <a className="btn btn-primary" href="#cta">
-                  Join Early Access
+                  Get Early Access Now
                 </a>
                 <a className="btn btn-secondary" href="#how">
                   See how it works
                 </a>
               </div>
+              <p className="hero-urgency">Early access limited to first 100 users.</p>
               <div className="hero-trust">
                 <div className="avatars" aria-hidden="true">
                   <span>A</span>
@@ -247,8 +248,9 @@ function App() {
                   <span>P</span>
                   <span>M</span>
                 </div>
-                <span>100+ founders on the waitlist</span>
+                <span>Joined by 127+ builders</span>
               </div>
+              <p className="hero-security">Secure payments powered by trusted infrastructure.</p>
             </div>
 
             <div className="hero-panel" aria-label="FlowPay code preview">
