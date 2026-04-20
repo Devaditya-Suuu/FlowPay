@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap');
+
+:root {
+  --heading: 'Syne', sans-serif;
+  --body: 'DM Sans', sans-serif;
+  --navy-900: #5f3307;
+  --navy-700: #7a4b19;
+  --navy-600: #946233;
+  --navy-500: #ab7d52;
+  --border: rgba(15, 23, 42, 0.08);
+  --bg: #fff9f2;
+  --soft: #fff2e2;
+  --accent: #f97316;
+  --brand: #ea580c;
+  --green: #16a34a;
+  --green-soft: #dcfce7;
+
+  font-family: var(--body);
+  color: var(--navy-900);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--bg);
+  color: var(--navy-900);
+}
+
+a,
+button,
+input {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+p {
+  margin: 0;
+}
+
+::selection {
+  background: rgba(249, 115, 22, 0.22);
+  color: var(--navy-900);
+}
