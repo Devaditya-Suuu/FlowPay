@@ -2,19 +2,121 @@ import { useEffect, useState } from 'react'
 import logo from './assets/logo.png'
 import './App.css'
 
+function IconBase({ children }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      {children}
+    </svg>
+  )
+}
+
+function ClockIcon() {
+  return (
+    <IconBase>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
+    </IconBase>
+  )
+}
+
+function ShieldAlertIcon() {
+  return (
+    <IconBase>
+      <path d="M12 22s7-3.5 7-9.5V5l-7-3-7 3v7.5C5 18.5 12 22 12 22Z" />
+      <path d="M12 8v5" />
+      <path d="M12 16h.01" />
+    </IconBase>
+  )
+}
+
+function CodeIcon() {
+  return (
+    <IconBase>
+      <path d="m8 16-4-4 4-4" />
+      <path d="m16 8 4 4-4 4" />
+      <path d="m14 5-4 14" />
+    </IconBase>
+  )
+}
+
+function ZapIcon() {
+  return (
+    <IconBase>
+      <path d="M13 2 3 14h7l-1 8 10-12h-7z" />
+    </IconBase>
+  )
+}
+
+function ShieldCheckIcon() {
+  return (
+    <IconBase>
+      <path d="M12 22s7-3.5 7-9.5V5l-7-3-7 3v7.5C5 18.5 12 22 12 22Z" />
+      <path d="m9.5 12.5 1.8 1.8 3.7-3.7" />
+    </IconBase>
+  )
+}
+
+function SparklesIcon() {
+  return (
+    <IconBase>
+      <path d="M12 2l1.4 4.4L18 8l-4.6 1.6L12 14l-1.4-4.4L6 8l4.6-1.6L12 2Z" />
+      <path d="M19 13l.8 2.2L22 16l-2.2.8L19 19l-.8-2.2L16 16l2.2-.8L19 13Z" />
+    </IconBase>
+  )
+}
+
+function RouteIcon() {
+  return (
+    <IconBase>
+      <path d="M6 6h6a4 4 0 0 1 4 4v4" />
+      <circle cx="6" cy="6" r="2" />
+      <circle cx="18" cy="18" r="2" />
+      <path d="m14 14 4 4" />
+    </IconBase>
+  )
+}
+
+function BracesIcon() {
+  return (
+    <IconBase>
+      <path d="M9 4c-2 0-3 1-3 3v2c0 1-1 2-2 2 1 0 2 1 2 2v2c0 2 1 3 3 3" />
+      <path d="M15 4c2 0 3 1 3 3v2c0 1 1 2 2 2-1 0-2 1-2 2v2c0 2-1 3-3 3" />
+    </IconBase>
+  )
+}
+
+function LinkIcon() {
+  return (
+    <IconBase>
+      <path d="M10 13a5 5 0 0 1 0-7l1-1a5 5 0 0 1 7 7l-1 1" />
+      <path d="M14 11a5 5 0 0 1 0 7l-1 1a5 5 0 0 1-7-7l1-1" />
+    </IconBase>
+  )
+}
+
+function BanknoteIcon() {
+  return (
+    <IconBase>
+      <rect x="3" y="6" width="18" height="12" rx="2" />
+      <circle cx="12" cy="12" r="2.5" />
+      <path d="M6 9h0.01M18 15h0.01" />
+    </IconBase>
+  )
+}
+
 const painPoints = [
   {
-    icon: '🕒',
+    Icon: ClockIcon,
     title: 'Weeks of KYC Delays',
     body: "Uploading business proofs before you've made a single rupee. Waiting weeks for compliance approval.",
   },
   {
-    icon: '🔒',
+    Icon: ShieldAlertIcon,
     title: 'Arbitrary Rejections',
     body: "Being rejected because your product is too new or doesn't fit into outdated risk categories.",
   },
   {
-    icon: '⌘',
+    Icon: CodeIcon,
     title: 'Messy Integration',
     body: 'Wading through legacy documentation just to create a simple checkout session.',
   },
@@ -45,17 +147,17 @@ const trustSteps = [
 
 const solutionPoints = [
   {
-    icon: '⚡',
+    Icon: ZapIcon,
     title: 'Live in minutes',
     body: 'No upfront company registration documents needed.',
   },
   {
-    icon: '🛡️',
+    Icon: ShieldCheckIcon,
     title: 'Progressive KYC',
     body: 'Verify as you scale. Your limits grow with your business.',
   },
   {
-    icon: '✨',
+    Icon: SparklesIcon,
     title: 'No hidden surprises',
     body: 'Clear pricing. No setup fees. No maintenance charges.',
   },
@@ -63,32 +165,32 @@ const solutionPoints = [
 
 const features = [
   {
-    icon: '⚡',
+    Icon: ZapIcon,
     title: 'Instant Onboarding',
     body: 'Live in under 5 minutes without tedious paperwork.',
   },
   {
-    icon: '🛡️',
+    Icon: ShieldCheckIcon,
     title: 'Progressive KYC',
     body: 'Verify as you grow, not before you even start.',
   },
   {
-    icon: '⤴',
+    Icon: RouteIcon,
     title: 'Smart Routing',
     body: 'Automatically routes to maximize success rates.',
   },
   {
-    icon: '⌘',
+    Icon: BracesIcon,
     title: 'Developer-First APIs',
     body: 'Clean, documented, works the first time you try it.',
   },
   {
-    icon: '🔗',
+    Icon: LinkIcon,
     title: 'Payment Links',
     body: 'Share a link, get paid. No code required.',
   },
   {
-    icon: '₹',
+    Icon: BanknoteIcon,
     title: 'Built for India',
     body: 'UPI, cards, wallets, and native support for Indian flows.',
   },
@@ -299,7 +401,7 @@ return session.url;`}</pre>
               {painPoints.map((point) => (
                 <article className="info-card problem-card" key={point.title} data-reveal>
                   <span className="info-icon" aria-hidden="true">
-                    {point.icon}
+                    <point.Icon />
                   </span>
                   <h3>{point.title}</h3>
                   <p>{point.body}</p>
@@ -323,7 +425,7 @@ return session.url;`}</pre>
                 {solutionPoints.map((point) => (
                   <div className="trust-item" key={point.title} data-reveal>
                     <div className="trust-item-icon" aria-hidden="true">
-                      {point.icon}
+                      <point.Icon />
                     </div>
                     <div>
                       <div className="trust-item-title">{point.title}</div>
@@ -369,7 +471,7 @@ return session.url;`}</pre>
               {features.map((feature) => (
                 <article className="feature-card" key={feature.title} data-reveal>
                   <div className="feature-icon" aria-hidden="true">
-                    {feature.icon}
+                    <feature.Icon />
                   </div>
                   <h3>{feature.title}</h3>
                   <p>{feature.body}</p>
