@@ -247,7 +247,7 @@ function App() {
                   <span>P</span>
                   <span>M</span>
                 </div>
-                <span>Trusted by 500+ early-stage builders in India</span>
+                <span>100+ founders on the waitlist</span>
               </div>
             </div>
 
