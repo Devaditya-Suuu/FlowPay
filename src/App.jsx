@@ -223,6 +223,7 @@ function App() {
   const [submitMessage, setSubmitMessage] = useState('')
   const [submitError, setSubmitError] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     const elements = document.querySelectorAll('[data-reveal]')
@@ -305,6 +306,18 @@ function App() {
           <span className="nav-logo">FlowPay</span>
         </div>
 
+        <button
+          className="menu-toggle"
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-expanded={isMenuOpen}
+          onClick={() => setIsMenuOpen((current) => !current)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
         <div className="nav-links">
           <a href="#how">How it Works</a>
           <a href="#features">Features</a>
@@ -316,6 +329,24 @@ function App() {
             Sign In
           </a>
           <a className="btn btn-nav" href="#cta">
+            Get Early Access Now
+          </a>
+        </div>
+
+        <div className={`mobile-menu ${isMenuOpen ? 'is-open' : ''}`}>
+          <a href="#how" onClick={() => setIsMenuOpen(false)}>
+            How it Works
+          </a>
+          <a href="#features" onClick={() => setIsMenuOpen(false)}>
+            Features
+          </a>
+          <a href="#comparison" onClick={() => setIsMenuOpen(false)}>
+            Compare
+          </a>
+          <a className="nav-signin" href="#cta" onClick={() => setIsMenuOpen(false)}>
+            Sign In
+          </a>
+          <a className="btn btn-nav" href="#cta" onClick={() => setIsMenuOpen(false)}>
             Get Early Access Now
           </a>
         </div>
