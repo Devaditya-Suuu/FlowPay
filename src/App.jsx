@@ -609,7 +609,7 @@ return session.url;`}</pre>
         <div className="footer-right">
           <a href="#">Privacy</a>
           <a href="#">Terms</a>
-          <a href="mailto:hello@flowpay.in">Contact</a>
+          <a href="mailto:devadityaborah2006@gmail.com">Contact</a>
         </div>
       </footer>
     </div>
