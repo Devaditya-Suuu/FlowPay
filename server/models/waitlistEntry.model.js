@@ -17,12 +17,6 @@ const waitlistEntrySchema = new mongoose.Schema(
       match: [/^\S+@\S+\.\S+$/, 'Please provide a valid email address'],
       index: true,
     },
-    building: {
-      type: String,
-      required: [true, 'Project/building field is required'],
-      trim: true,
-      maxlength: 240,
-    },
     createdAt: {
       type: Date,
       default: Date.now,

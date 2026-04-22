@@ -260,12 +260,11 @@ function App() {
     const payload = {
       name: String(formData.get('name') || '').trim(),
       email: String(formData.get('email') || '').trim(),
-      building: String(formData.get('building') || '').trim(),
     }
 
-    if (!payload.name || !payload.email || !payload.building) {
+    if (!payload.name || !payload.email) {
       setSubmitError(true)
-      setSubmitMessage('Please fill out all fields.')
+      setSubmitMessage('Please fill out your name and email.')
       return
     }
 
@@ -582,10 +581,6 @@ return session.url;`}</pre>
               <label>
                 Email
                 <input name="email" type="email" placeholder="founder@startup.com" required />
-              </label>
-              <label>
-                What are you building?
-                <input name="building" type="text" placeholder="A SaaS for..." required />
               </label>
               <button className="btn btn-cta" type="submit" disabled={isSubmitting}>
                 {isSubmitting ? 'Submitting...' : 'Claim Your Spot'}

@@ -5,19 +5,18 @@ const waitlistRouter = Router()
 
 waitlistRouter.post('/', async (req, res) => {
   try {
-    const { name, email, building } = req.body ?? {}
+    const { name, email } = req.body ?? {}
 
-    if (!name || !email || !building) {
+    if (!name || !email) {
       return res.status(400).json({
         ok: false,
-        message: 'name, email, and building are required.',
+        message: 'name and email are required.',
       })
     }
 
     const doc = await WaitlistEntry.create({
       name,
       email,
-      building,
       source: 'landing_page',
     })
 
