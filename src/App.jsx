@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { LoaderCircle } from 'lucide-react'
 import logo from './assets/logo.png'
 import './App.css'
 
@@ -583,7 +584,14 @@ return session.url;`}</pre>
                 <input name="email" type="email" placeholder="founder@startup.com" required />
               </label>
               <button className="btn btn-cta" type="submit" disabled={isSubmitting}>
-                {isSubmitting ? 'Submitting...' : 'Claim Your Spot'}
+                {isSubmitting ? (
+                  <span className="btn-cta-content">
+                    <LoaderCircle className="loader-circle-icon loader-circle-spin" aria-hidden="true" />
+                    Submitting...
+                  </span>
+                ) : (
+                  'Claim Your Spot'
+                )}
               </button>
               {submitMessage ? (
                 <p className={submitError ? 'form-status form-status-error' : 'form-status'}>{submitMessage}</p>
